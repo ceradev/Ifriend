@@ -8,7 +8,7 @@ class DefaultController{
   public function index(){
     global $blade;
     $name = 'Pedro';
-    echo $blade->make('index', ['name' => 'Pedro'])->render();
+    echo $blade->make('default.index', ['name' => 'Pedro'])->render();
   }
 }
 

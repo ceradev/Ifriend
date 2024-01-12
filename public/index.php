@@ -4,6 +4,8 @@ use Jenssegers\Blade\Blade;
 
 require_once "../vendor/autoload.php";
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
+$dotenv->load();
 
 $views = '../src/views';
 $cache = '../cache';
@@ -20,8 +22,8 @@ if($match) {
  $target = $match["target"];
  if(is_string($target) && strpos($target, "#") !== false) {
      list($controller, $action) = explode("#", $target);
-     $controller = "Dsw\\Ifriend\\Controllers\\" . $controller;
-     $controller = new $controller;
+     $controller = $_ENV["NAMESPACE"] . "Controllers\\" . $controller;
+     $controller = new $controller($router);
      $controller->$action($match["params"]);
  } else {
      if(is_callable($match["target"])) 
