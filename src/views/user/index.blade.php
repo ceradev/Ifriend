@@ -7,6 +7,6 @@
 @section('container')
 
 
-<p>Bienvenido usuario no registrado</p>
+<p>Bienvenido usuario {{$name}}</p>
 
 @endsection
