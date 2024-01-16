@@ -2,12 +2,18 @@
 
 namespace Dsw\Ifriend\Controllers;
 
+use Dsw\Ifriend\Models\User;
+
+require_once ( '../src/connection.php');
 
 class UserController{
   
   public function index(){
     global $blade;
-    $name = 'Pedro';
-    echo $blade->make('user.index', ['name' => 'Pedro'])->render();
+    $users = User::all();
+    echo '<pre>';
+    print_r($users);
+    echo '</pre>';
+    echo $blade->make('user.index', ['users' => $users])->render();
   }
 }
