@@ -7,6 +7,16 @@
 @section('container')
 
 
-<p>Bienvenido usuario {{$name}}</p>
+<h2>Bienvenido usuarios</h2>
+
+<ul>
+
+@foreach ($users as $user)
+
+  <li>{{ $user->name }}</li>
+    
+@endforeach
+
+</ul>
 
 @endsection
