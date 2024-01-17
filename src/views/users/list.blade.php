@@ -28,16 +28,15 @@
     <td scope="row">{{ $user->mail  }}</td>
     <td scope="row">{{ $user->create_at}}</td>
     <td scope="row">{{ $user->update_at}}</td>
-    <td><button type="button" class="btn btn-danger">Borrar</button></td>
+    <td>
+    <a href="{{$router->generate('user_delete', ['id' => $user->id])}}">  
+      <button type="button" class="btn btn-danger">Borrar</button>
+    </a>
+    </td>
   </tr>
   @endforeach
 </tbody>
 </table>
 
-  
-    
-
-
-</ul>
 
 @endsection
