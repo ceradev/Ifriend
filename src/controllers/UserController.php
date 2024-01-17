@@ -6,14 +6,26 @@ use Dsw\Ifriend\Models\User;
 
 require_once ( '../src/connection.php');
 
-class UserController{
+class UserController extends Controller{
   
-  public function index(){
-    global $blade;
+
+  public function delete($params) {
+    $id = $params["id"];
+    $user = User::find($id);
+    $user->delete();
+    $this->list();
+  }
+
+  public function list(){
+    // global $router;
+    // global $blade;
     $users = User::all();
-    // echo '<pre>';
-    // print_r($users);
-    // echo '</pre>';
-    echo $blade->make('users.list', ['users' => $users])->render();
+    
+    echo $this->blade->make('users.list', ['users' => $users,"router" => $this->router])->render();
+  }
+
+  public function create() {
+    
+    echo $this->blade->make('users.create', ["router" => $this->router])->render();
   }
 }

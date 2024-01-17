@@ -3,11 +3,12 @@
 namespace Dsw\Ifriend\Controllers;
 
 
-class DefaultController{
+class DefaultController extends Controller{
   
   public function index(){
-    global $blade;
-    echo $blade->make('index')->render();
+    // global $blade;
+
+    echo $this->blade->make('index',["router" => $this->router])->render();
   }
 }
 
