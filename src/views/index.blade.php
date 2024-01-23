@@ -6,6 +6,6 @@
 
 
 
-@section('content')
+@section('container')
   <h2>Espero que disfrutes de nuestra App</h2>
 @endsection
