@@ -5,3 +5,5 @@ $router->map('GET', '/users/list', 'UserController#list', 'user_list');
 $router->map('GET', '/users/[i:id]/delete', 'UserController#delete', 'user_delete');
 $router->map('GET', '/users/create', 'UserController#create', 'user_create');
 $router->map('POST', '/users', 'UserController#post', 'user_post');
+$router->map('GET', '/users/[i:id]', 'UserController#edit', 'user_edit');
+$router->map('POST', '/users/[i:id]', 'UserController#update', 'user_update');
