@@ -9,9 +9,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{$router->generate('index')}}">Home</a>
         </li>
+        @isset($_SESSION['id'])
         <li class="nav-item">
           <a class="nav-link" href="{{$router->generate('user_list')}}">Users</a>
         </li>
+        @endisset
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
