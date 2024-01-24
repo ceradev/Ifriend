@@ -13,6 +13,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{$router->generate('user_list')}}">Users</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{$router->generate('game_index')}}">Game</a>
+        </li>
         @endisset
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
